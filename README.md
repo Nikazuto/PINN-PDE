@@ -24,17 +24,5 @@ The app also works with nothing in `data/`: you can upload the results file (and
     pip install -r requirements.txt
     streamlit run app.py
 
-## 3. Deploy on Streamlit Community Cloud
 
-1. Push this folder to a GitHub repo (repo root = this folder).
-2. share.streamlit.io -> New app -> pick the repo, branch, main file `app.py` -> Deploy.
 
-If the build is slow or too large, delete the `torch` lines in `requirements.txt`: only the PINN explorer page needs it.
-
-## Notes
-
-- Checkpoint architecture is inferred from the weights; hard-constraint transforms are chosen from the run name
-  (`poisson_hard*`, `heat_hard*`, `burgers_hard_bc*`), so keep the notebook's checkpoint file names.
-- Checkpoints are pickle-based: only load files you created yourself.
-- The Burgers reference is read from `data/results/burgers_reference_N2048.npz`; without it, a coarser one is computed live.
-- The dashboard does not retrain PINNs; training stays in the notebook.
