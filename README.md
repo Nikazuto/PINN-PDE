@@ -268,7 +268,8 @@ streamlit run app.py
 
 Then open the address it prints (normally <http://localhost:8501>).
 
-Alternatively view the project site: <https://nexuspinn-pde.streamlit.app/PINN_Explorer>
+Alternatively view the project site: <https://nexuspinn-pde.streamlit.app/>
+
 ### Quick self-test (no Streamlit or PyTorch needed)
 
 ```bash
