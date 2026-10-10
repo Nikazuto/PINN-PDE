@@ -1,0 +1,63 @@
+experiment,method,kind,rel_l2,max_err,runtime_s,status,notes
+1_poisson,PINN hard BC,PINN,0.00012283952534159986,0.00022454027579288383,55.48826631799977,finished,
+1_poisson,PINN soft BC,PINN,0.0015785062312977938,0.002259734971188365,57.132494973000234,finished,
+1_poisson,FD 2nd order (n=1000),classical,6.176648801623578e-06,8.312416297284742e-06,0.0002510319999373678,ok,
+1_poisson,FD 2nd order (n=200),classical,8.151483635679468e-05,0.00020791364088923459,0.00019704900000760972,ok,
+1_poisson,FD 2nd order (n=100),classical,0.0002911188319805492,0.0008329481407425288,0.00019780699994953466,ok,
+1_poisson,FD 2nd order (n=50),classical,0.0011431631511488651,0.00328625887589884,0.00021886100000756414,ok,
+1_poisson,FD 2nd order (n=25),classical,0.00484150027552732,0.013486210812609034,0.00018008600000030128,ok,
+2_heat,"PINN hard IC/BC, Adam + L-BFGS",PINN,4.874164365143429e-05,0.0003175999807670804,159.41457863799928,finished,
+2_heat,Crank-Nicolson (nx=400),classical,5.33358201204038e-06,6.874022326686102e-06,0.02836694899997383,ok,
+2_heat,Crank-Nicolson (nx=200),classical,2.133657597442618e-05,2.7498381425350438e-05,0.013510320000023057,ok,
+2_heat,FTCS (nx=200),classical,3.803315795460275e-05,4.91193408502788e-05,0.04057225999997627,ok,
+2_heat,Crank-Nicolson (nx=100),classical,8.538227272068266e-05,0.00011003018863886549,0.007079396999984056,ok,
+2_heat,FTCS (nx=100),classical,0.00014219546689748141,0.00018367281325804008,0.012769825999953355,ok,
+2_heat,Crank-Nicolson (nx=50),classical,0.0006527279578362634,0.0024691039571937967,0.006868351000093753,ok,
+2_heat,FTCS (nx=50),classical,0.000979918769381145,0.0024691039571937967,0.004138693000072635,ok,
+2_heat,Crank-Nicolson (nx=25),classical,0.0024924301004936303,0.00984387125828512,0.006688761000077648,ok,
+2_heat,FTCS (nx=25),classical,0.00411371074458318,0.00984387125828512,0.0013727570000128253,ok,
+3_burgers,"PINN soft BC/IC, Adam + L-BFGS",PINN,0.007611523331879652,0.09390959143638596,208.23456250599997,finished,
+3_burgers,FD CN-AB2 (nx=2049),classical,7.593903599976071e-05,0.0010916122339589274,0.3136440959999618,ok,
+3_burgers,FD CN-AB2 (nx=1025),classical,0.00030521059496489385,0.004388343459631128,0.11357674099997439,ok,
+3_burgers,FD CN-AB2 (nx=513),classical,0.0012418850275690311,0.017796344345235693,0.04952714000000924,ok,
+3_burgers,FD CN-AB2 (nx=257),classical,0.009238556244345717,0.13207786657677106,0.03420215400001325,ok,
+3_burgers,FD CN-AB2 (nx=129),classical,0.029622978229656552,0.3007174607221843,0.010021285999982865,ok,
+3_burgers,Spectral ETDRK4 N=2048 (reference),reference,0.0,0.0,1.456800087999909,ok,
+4a_disk,"PINN soft BC, Adam + L-BFGS",PINN,0.0005825846126274425,0.0021321593164675967,153.10343813000077,finished,
+4a_disk,FD 5-point staircase (h=2/200),classical,0.006427345464502884,0.020578405201758326,0.24458734399991044,ok,nodal error on the FD grid
+4a_disk,FD 5-point staircase (h=2/100),classical,0.010327093286838288,0.02785597723590924,0.04243923400008498,ok,nodal error on the FD grid
+4a_disk,FD 5-point staircase (h=2/40),classical,0.025677418048433293,0.05618631366623999,0.006206254999824523,ok,nodal error on the FD grid
+4a_disk,FD 5-point staircase (h=2/20),classical,0.04117444523595179,0.06412219565304356,0.020146866999994018,ok,nodal error on the FD grid
+4b_lshape,"PINN soft BC, Adam + L-BFGS",PINN,0.008637599540316851,0.07502561677585319,146.7843799590005,finished,
+4b_lshape,FD 5-point (h=2/200),classical,0.00024095990792434013,0.003903416557648802,0.1765592930000821,ok,nodal error on the FD grid
+4b_lshape,FD 5-point (h=2/100),classical,0.0006022138856845844,0.006181870195117366,0.030556247000049552,ok,nodal error on the FD grid
+4b_lshape,FD 5-point (h=2/40),classical,0.002014793183122336,0.011281304686627372,0.005292287999964174,ok,nodal error on the FD grid
+4b_lshape,FD 5-point (h=2/20),classical,0.005020051129368967,0.017542819325854747,0.0020787969999673805,ok,nodal error on the FD grid
+5_inverse,"PINN alpha recovery (noise 0%, seed 1234)",PINN,0.0006713884042733619,0.004652518313378096,93.1379421779991,finished,alpha=0.04991 (rel err 0.18%); rel_l2 = field error
+5_inverse,"PINN alpha recovery (noise 1%, seed 1234)",PINN,0.0010483112891764845,0.004071037285029888,93.94279253399986,finished,alpha=0.04984 (rel err 0.32%); rel_l2 = field error
+5_inverse,"PINN alpha recovery (noise 3%, seed 1234)",PINN,0.00259224574552645,0.00607300835814506,93.97903545700001,finished,alpha=0.04969 (rel err 0.61%); rel_l2 = field error
+5_inverse,"PINN alpha recovery (noise 0%, seed 1235)",PINN,0.00320764775928079,0.021277094498400984,92.21278580199964,finished,alpha=0.04966 (rel err 0.67%); rel_l2 = field error
+5_inverse,"PINN alpha recovery (noise 1%, seed 1235)",PINN,0.003301866424738249,0.020986493676900864,91.53316255400046,finished,alpha=0.04956 (rel err 0.88%); rel_l2 = field error
+5_inverse,"PINN alpha recovery (noise 3%, seed 1235)",PINN,0.00412971031574182,0.020323947072029114,96.03733061599951,finished,alpha=0.04937 (rel err 1.26%); rel_l2 = field error
+5_inverse,"PINN alpha recovery (noise 5%, seed 1234)",PINN,0.004204184323904274,0.010722647546974162,97.53017890900014,finished,alpha=0.04952 (rel err 0.95%); rel_l2 = field error
+5_inverse,"PINN alpha recovery (noise 5%, seed 1235)",PINN,0.005513183912143338,0.02122767467204567,95.61624895999921,finished,alpha=0.04917 (rel err 1.66%); rel_l2 = field error
+5_inverse,"CN least-squares fit (noise 0%, seed 1234)",classical,,,0.10100127200007591,ok,alpha=0.04999 (rel err 0.02%); knows IC/BC
+5_inverse,"CN least-squares fit (noise 0%, seed 1235)",classical,,,0.09277372099995773,ok,alpha=0.04999 (rel err 0.01%); knows IC/BC
+5_inverse,"CN least-squares fit (noise 1%, seed 1234)",classical,,,0.09853916500014748,ok,alpha=0.04993 (rel err 0.13%); knows IC/BC
+5_inverse,"CN least-squares fit (noise 1%, seed 1235)",classical,,,0.08613127699982215,ok,alpha=0.04993 (rel err 0.14%); knows IC/BC
+5_inverse,"CN least-squares fit (noise 3%, seed 1234)",classical,,,0.09896877100004531,ok,alpha=0.04981 (rel err 0.37%); knows IC/BC
+5_inverse,"CN least-squares fit (noise 3%, seed 1235)",classical,,,0.0930559280000125,ok,alpha=0.04979 (rel err 0.41%); knows IC/BC
+5_inverse,"CN least-squares fit (noise 5%, seed 1234)",classical,,,0.1048789050000778,ok,alpha=0.04969 (rel err 0.61%); knows IC/BC
+5_inverse,"CN least-squares fit (noise 5%, seed 1235)",classical,,,0.15857248600013918,ok,alpha=0.04966 (rel err 0.68%); knows IC/BC
+6_ablation,(a) Hard BC/IC (seed 1234),PINN,0.003301745684625813,0.03437630832195267,200.00793989200065,time cap (200s) reached at Adam step 17209,N_col final = 12000
+6_ablation,(a) Hard BC/IC (seed 1235),PINN,0.003782932436712043,0.03942358866333951,200.00656657300033,time cap (200s) reached at Adam step 17168,N_col final = 12000
+6_ablation,(b) Fourier features (seed 1234),PINN,0.005611891952129854,0.09035553038120282,200.00730200799944,time cap (200s) reached at Adam step 14515,N_col final = 12000
+6_ablation,(e) Adam + L-BFGS (seed 1234),PINN,0.007611523331879652,0.09390959143638596,208.23456250599997,finished,N_col final = 12000
+6_ablation,"Baseline (Adam, soft BC/IC) (seed 1234)",PINN,0.008540340324128932,0.10531997680664047,200.00378052500082,time cap (200s) reached at Adam step 18283,N_col final = 12000
+6_ablation,(e) Adam + L-BFGS (seed 1235),PINN,0.014963802611654302,0.17295575141906733,217.35350417100653,finished,N_col final = 12000
+6_ablation,(d) RAR (seed 1234),PINN,0.015557006948045375,0.16873310506343853,200.00514517399915,time cap (200s) reached at Adam step 17732,N_col final = 18000
+6_ablation,"Baseline (Adam, soft BC/IC) (seed 1235)",PINN,0.016536375518382874,0.19036024808883653,200.00253909099638,time cap (200s) reached at Adam step 18231,N_col final = 12000
+6_ablation,(b) Fourier features (seed 1235),PINN,0.02815698463807436,0.32769489288330067,200.0028574629987,time cap (200s) reached at Adam step 14542,N_col final = 12000
+6_ablation,(d) RAR (seed 1235),PINN,0.04133001353601826,0.45763474702835094,200.0095600239988,time cap (200s) reached at Adam step 17733,N_col final = 18000
+6_ablation,(c) Adaptive loss weights (seed 1234),PINN,0.35083332103131815,0.9127105644766437,200.00809950599978,time cap (200s) reached at Adam step 18321,N_col final = 12000
+6_ablation,(c) Adaptive loss weights (seed 1235),PINN,0.37766943722696655,0.9582861594600689,200.00180415300247,time cap (200s) reached at Adam step 18546,N_col final = 12000

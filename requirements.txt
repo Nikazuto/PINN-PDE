@@ -1,0 +1,9 @@
+streamlit>=1.40
+numpy
+scipy
+pandas
+matplotlib
+# CPU-only PyTorch (needed only for the "PINN explorer" page). If the build is too slow or too large,
+# delete these two lines: every other page keeps working without it.
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch

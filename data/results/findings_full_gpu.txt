@@ -1,0 +1,15 @@
+[1_poisson] best PINN: PINN hard BC -> rel L2 1.23e-04 in 55.5s. Best classical: FD 2nd order (n=1000) -> 6.18e-06 in 0.000251s. Cheapest classical run at least as accurate as the PINN: FD 2nd order (n=200) (0.000197s, 281596x faster).
+[2_heat] best PINN: PINN hard IC/BC, Adam + L-BFGS -> rel L2 4.87e-05 in 159.4s. Best classical: Crank-Nicolson (nx=400) -> 5.33e-06 in 0.0284s. Cheapest classical run at least as accurate as the PINN: Crank-Nicolson (nx=200) (0.0135s, 11799x faster).
+[3_burgers] best PINN: PINN soft BC/IC, Adam + L-BFGS -> rel L2 7.61e-03 in 208.2s. Best classical: FD CN-AB2 (nx=2049) -> 7.59e-05 in 0.314s. Cheapest classical run at least as accurate as the PINN: FD CN-AB2 (nx=513) (0.0495s, 4204x faster).
+[4a_disk] best PINN: PINN soft BC, Adam + L-BFGS -> rel L2 5.83e-04 in 153.1s. Best classical: FD 5-point staircase (h=2/200) -> 6.43e-03 in 0.245s. No classical configuration tried here reached the PINN's error.
+[4b_lshape] best PINN: PINN soft BC, Adam + L-BFGS -> rel L2 8.64e-03 in 146.8s. Best classical: FD 5-point (h=2/200) -> 2.41e-04 in 0.177s. Cheapest classical run at least as accurate as the PINN: FD 5-point (h=2/20) (0.00208s, 70610x faster).
+[5_inverse] noise 0%: alpha rel. error PINN 0.43% (93s) vs CN fit 0.01% (0.10s, knows IC/BC).
+[5_inverse] noise 1%: alpha rel. error PINN 0.60% (93s) vs CN fit 0.14% (0.09s, knows IC/BC).
+[5_inverse] noise 3%: alpha rel. error PINN 0.94% (95s) vs CN fit 0.39% (0.10s, knows IC/BC).
+[5_inverse] noise 5%: alpha rel. error PINN 1.30% (97s) vs CN fit 0.65% (0.13s, knows IC/BC).
+[6_ablation] (a) Hard BC/IC: mean rel L2 3.54e-03 = 0.28x baseline (200s vs 200s; n_seeds=2).
+[6_ablation] (b) Fourier features: mean rel L2 1.69e-02 = 1.35x baseline (200s vs 200s; n_seeds=2).
+[6_ablation] (c) Adaptive loss weights: mean rel L2 3.64e-01 = 29.05x baseline (200s vs 200s; n_seeds=2).
+[6_ablation] (d) RAR: mean rel L2 2.84e-02 = 2.27x baseline (200s vs 200s; n_seeds=2).
+[6_ablation] (e) Adam + L-BFGS: mean rel L2 1.13e-02 = 0.90x baseline (213s vs 200s; n_seeds=2).
+[budget] 10 run(s) hit their wall-clock cap; their errors are budget-limited, not converged: burgers_baseline_s1234, burgers_baseline_s1235, burgers_hard_bc_s1234, burgers_hard_bc_s1235, burgers_fourier_s1234, burgers_fourier_s1235, burgers_adaptive_w_s1234, burgers_adaptive_w_s1235, burgers_rar_s1234, burgers_rar_s1235
